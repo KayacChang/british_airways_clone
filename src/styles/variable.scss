@@ -1,5 +1,7 @@
 @import "~bootswatch/dist/simplex/variables";
 
+$b_red: #b73e3e;
+
 $HOST: "https://www.britishairways.com";
 
 @mixin desktop {
@@ -27,6 +29,16 @@ $HOST: "https://www.britishairways.com";
   }
 }
 
+@mixin box {
+  background: $white;
+  border: 1px solid $gray-200;
+  border-radius: 4px;
+}
+
 @mixin shadow {
   text-shadow: 0.1rem 0.2rem rgba(0, 0, 0, 0.5);
+}
+
+@mixin easeOutExpo($duration: 0.6s) {
+  transition: all $duration cubic-bezier(0.165, 0.84, 0.44, 1);
 }

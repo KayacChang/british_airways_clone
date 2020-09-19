@@ -6,7 +6,8 @@
   flex-direction: column;
 
   background: $red;
-  height: 66vh;
+
+  padding: 6rem 0;
 
   > * {
     padding: 0 0.6rem;
@@ -36,5 +37,11 @@
 
   > * {
     margin: 1rem 0;
+  }
+
+  @include desktop {
+    button {
+      width: 12rem;
+    }
   }
 }

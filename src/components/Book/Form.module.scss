@@ -1,0 +1,82 @@
+@import "styles/variable";
+
+.form {
+  @include box;
+
+  display: flex;
+  flex-direction: column;
+  color: $gray-900;
+
+  margin: auto;
+  margin-top: 2rem;
+  width: 60%;
+
+  padding: 2rem;
+
+  > * {
+    display: flex;
+
+    margin-bottom: 0.5rem;
+  }
+}
+
+.group {
+  flex-wrap: wrap;
+
+  :first-child {
+    margin-right: 0.5rem;
+  }
+
+  > * {
+    flex: 47%;
+
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.title {
+  padding-bottom: 1rem;
+
+  h5 {
+    color: $blue;
+    border-bottom: 2px solid $blue;
+
+    padding-bottom: 0.2rem;
+    margin-right: 1rem;
+  }
+
+  a {
+    color: $gray-900;
+    font-weight: 600;
+    text-decoration: none;
+  }
+}
+
+.trigger {
+  @include box;
+
+  padding: 1rem 0;
+  font-size: medium;
+}
+
+.vertical {
+  display: flex;
+  flex-direction: column;
+}
+
+.horizontal {
+  display: flex;
+}
+
+.bigger {
+  color: $b_red;
+  font-size: xx-large;
+}
+
+.search {
+  @extend .horizontal;
+  justify-content: center;
+
+  background: $red;
+}

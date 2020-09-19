@@ -16,14 +16,21 @@ $tri-size: 10px;
   @include triangle($tri-size, $white);
 }
 
-.tab {
-  $size: 7.5rem;
+@mixin size($size) {
   width: $size;
-  height: $size * 1;
+  height: $size;
+}
 
+.tab {
+  @include size(7.5rem);
+
+  @include desktop {
+    @include size(9rem);
+  }
+
+  @include box;
   background: $gray-200;
   border: none;
-  border-radius: 4px;
 
   display: flex;
   flex-direction: column;

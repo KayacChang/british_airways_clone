@@ -1,26 +1,23 @@
-import clsx from "clsx";
-import React, { ChangeEvent, ReactNode } from "react";
+import React, { ChangeEvent } from "react";
 import styles from "./TextField.module.scss";
 
 type Props = {
-  label: string;
   name?: string;
-  icon?: ReactNode;
-  className?: string;
+  label: string;
+  hint?: string;
   value?: string;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
 export default function TextField({
-  icon,
   label,
   name = label,
-  className,
+  hint = "",
   value = "",
   onChange = () => {},
 }: Props) {
   return (
-    <div className={clsx(styles.textfield, className)}>
+    <div className={styles.textfield}>
       <input
         type="text"
         name={name}
@@ -28,11 +25,11 @@ export default function TextField({
         onChange={onChange}
         value={value}
       />
-      <label htmlFor={name} className={clsx(value && styles.active)}>
+      <label htmlFor={name}>
         {label}
-      </label>
 
-      {icon && <button>{icon}</button>}
+        <span>{hint}</span>
+      </label>
     </div>
   );
 }

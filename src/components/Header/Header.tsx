@@ -2,19 +2,18 @@ import React from "react";
 import { FiSearch as Search, FiMenu as Menu } from "react-icons/fi";
 import { VscAccount as Account } from "react-icons/vsc";
 import clsx from "clsx";
-import useResize from "hooks/useResize";
 import styles from "./Header.module.scss";
 import Logo from "./Logo";
 import Button from "./Button";
 import Link from "./Link";
 import Localization from "./Localization";
 import Information from "./Information";
+import useDevice from "hooks/useDevice";
 
 export default function Header() {
   const size = 32;
 
-  const [width] = useResize();
-  const isMobile = width < 750;
+  const isMobile = useDevice("mobile");
 
   return (
     <header className={styles.header}>
