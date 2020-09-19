@@ -15,3 +15,18 @@ $HOST: "https://www.britishairways.com";
   background-size: contain;
   font-size: 0;
 }
+
+@mixin triangle($size, $color) {
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -$size;
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-top: $size solid $color;
+  }
+}
+
+@mixin shadow {
+  text-shadow: 0.1rem 0.2rem rgba(0, 0, 0, 0.5);
+}
