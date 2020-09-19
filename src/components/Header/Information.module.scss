@@ -1,0 +1,11 @@
+@import "styles/variable";
+
+@mixin size($size) {
+  width: $size;
+  height: $size;
+}
+
+.information {
+  @include logo($HOST + "/apps/ba-home/images/oneworldlrg.png");
+  @include size(2.6rem);
+}

@@ -1,1 +1,17 @@
 @import "~bootswatch/dist/simplex/variables";
+
+$HOST: "https://www.britishairways.com";
+
+@mixin desktop {
+  @media (min-width: 750px) {
+    @content;
+  }
+}
+
+@mixin logo($href) {
+  display: block;
+  background-image: url($href);
+  background-repeat: no-repeat;
+  background-size: contain;
+  font-size: 0;
+}

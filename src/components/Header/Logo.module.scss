@@ -1,0 +1,20 @@
+@import "styles/variable";
+
+@mixin size($size, $rate) {
+  width: $size * $rate;
+  height: $size;
+}
+
+.logo {
+  @include logo(
+    $HOST + "/cms/global/assets/images/site/brand/ba_speedmarque_positive.svg"
+  );
+  @include size(1.3rem, 4);
+
+  @include desktop {
+    @include logo(
+      $HOST + "/cms/global/assets/images/site/brand/ba_masterbrand_positive.svg"
+    );
+    @include size(2.9rem, 6);
+  }
+}
