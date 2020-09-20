@@ -1,0 +1,49 @@
+@import "styles/variable";
+
+.tabs {
+  display: flex;
+  justify-content: center;
+
+  > * {
+    margin: 0 2px;
+  }
+}
+
+$tri-size: 10px;
+.active {
+  background: $white !important;
+
+  @include triangle($tri-size, $white);
+}
+
+@mixin size($size) {
+  width: $size;
+  height: $size;
+}
+
+.tab {
+  @include size(7.5rem);
+
+  @include desktop {
+    @include size(9rem);
+  }
+
+  @include box;
+  background: $gray-200;
+  border: none;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  font-size: medium;
+  font-weight: 500;
+
+  position: relative;
+  margin-bottom: $tri-size;
+
+  > * {
+    padding: 4px 0;
+  }
+}

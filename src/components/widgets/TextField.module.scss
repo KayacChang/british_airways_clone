@@ -1,0 +1,79 @@
+@import "styles/variable";
+
+@mixin fixed {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+$border: 1px;
+$padding: 1rem;
+
+.active {
+  border-left: $border * 4 solid $blue;
+
+  label {
+    transform: translateY(-120%) scale(0.6) !important;
+
+    span {
+      opacity: 0 !important;
+    }
+  }
+}
+
+.textfield {
+  display: flex;
+  position: relative;
+
+  @include box;
+  border: $border solid $gray-200;
+
+  input {
+    width: 100%;
+    padding: $padding;
+    padding-left: $padding * (4 / 5);
+    border: 0;
+
+    border-left: $border * 4 solid transparent;
+    font-size: 1.2rem;
+
+    &::placeholder {
+      opacity: 0;
+    }
+  }
+
+  label {
+    @include fixed;
+    @include easeOutExpo;
+
+    left: $padding;
+    transform-origin: left top;
+  }
+
+  span {
+    @include easeOutExpo;
+
+    margin-left: 1rem;
+    opacity: 1;
+
+    font-size: small;
+    font-style: italic;
+    color: $gray-900;
+  }
+
+  input:focus {
+    border-left: $border * 4 solid $blue;
+
+    &::placeholder {
+      opacity: 1;
+    }
+
+    & + label {
+      transform: translateY(-120%) scale(0.6);
+
+      span {
+        opacity: 0;
+      }
+    }
+  }
+}

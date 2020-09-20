@@ -1,0 +1,86 @@
+@import "styles/variable";
+
+.form {
+  width: 100%;
+  display: flex;
+
+  flex-direction: column;
+  color: $white;
+
+  padding: 0 0.6rem;
+
+  svg {
+    color: $white;
+  }
+
+  @include desktop {
+    flex-direction: row;
+  }
+}
+
+.title {
+  display: flex;
+  height: 3rem;
+  align-items: center;
+
+  * {
+    border-color: $white !important;
+  }
+
+  > * {
+    height: 100%;
+  }
+
+  > div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    > * {
+      margin-right: 1rem;
+    }
+  }
+
+  @include desktop {
+  }
+}
+
+.back {
+  outline: 0;
+
+  border: 0;
+  background: transparent;
+  padding: 0 1rem;
+
+  display: flex;
+  align-items: center;
+}
+
+.content {
+  width: 100%;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  flex-direction: column;
+
+  > * {
+    margin: 0.3rem 0;
+  }
+
+  @include desktop {
+    flex-direction: row;
+
+    > * {
+      flex: 1;
+
+      margin: 0 0.3rem;
+    }
+  }
+
+  span {
+    display: flex;
+    align-items: center;
+  }
+}

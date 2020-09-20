@@ -1,1 +1,53 @@
 @import "~bootswatch/dist/simplex/variables";
+
+$b_red: #b73e3e;
+$d_blue: #004486;
+$b_blue: #3467a3;
+$l_blue: #7faee1;
+
+$HOST: "https://www.britishairways.com";
+
+@mixin desktop($size: "M") {
+  @if $size == "L" {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  } @else {
+    @media (min-width: 750px) {
+      @content;
+    }
+  }
+}
+
+@mixin logo($href) {
+  display: block;
+  background-image: url($href);
+  background-repeat: no-repeat;
+  background-size: contain;
+  font-size: 0;
+}
+
+@mixin triangle($size, $color) {
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -$size;
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-top: $size solid $color;
+  }
+}
+
+@mixin box {
+  background: $white;
+  border: 1px solid $gray-200;
+  border-radius: 4px;
+}
+
+@mixin shadow {
+  text-shadow: 0.1rem 0.2rem rgba(0, 0, 0, 0.5);
+}
+
+@mixin easeOutExpo($duration: 0.6s) {
+  transition: all $duration cubic-bezier(0.165, 0.84, 0.44, 1);
+}

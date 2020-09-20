@@ -1,0 +1,8 @@
+@import "./common";
+
+.link {
+  text-decoration: none;
+  @extend .font;
+
+  margin-right: 2rem;
+}

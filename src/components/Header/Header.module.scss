@@ -1,0 +1,60 @@
+@import "styles/variable";
+
+.header {
+  background: $navbar-dark-color;
+  border-bottom: 1px solid $gray-200;
+  > div {
+    padding: 0 1rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  hr {
+    margin: 0;
+    display: none;
+  }
+
+  @include desktop {
+    > div {
+      margin: auto;
+      flex-wrap: wrap;
+      max-width: 1200px;
+    }
+
+    hr {
+      display: block;
+
+      border: 0;
+      border-bottom: 1px solid $gray-200;
+    }
+  }
+}
+
+.group {
+  flex: 50%;
+
+  display: flex;
+  align-items: center;
+
+  > * {
+    margin: 0 0.6rem;
+  }
+}
+
+.top {
+  height: 3.6rem;
+
+  @include desktop {
+    height: 6.3rem;
+  }
+}
+
+.bottom {
+  height: 2.7rem;
+}
+
+.align_end {
+  justify-content: flex-end;
+}

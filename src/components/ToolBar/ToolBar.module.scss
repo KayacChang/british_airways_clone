@@ -1,0 +1,55 @@
+@import "styles/variable";
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  height: auto;
+  padding: 0.6rem 0;
+
+  @include desktop {
+    height: 4rem;
+    padding: 0;
+  }
+}
+
+.submit {
+  background: $b_red;
+  padding: 0;
+  border: 0;
+  font-size: medium;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.7rem 0;
+}
+
+.field {
+  label {
+    color: $gray-600;
+    font-weight: 600;
+
+    left: 0.7rem;
+  }
+
+  input {
+    padding: 0.5rem;
+  }
+}
+
+.icon {
+  $size: 2rem;
+  width: $size;
+  height: $size;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: $d_blue;
+
+  border: 2px solid $d_blue;
+  border-radius: 100%;
+
+  @include easeOutExpo;
+}

@@ -1,0 +1,128 @@
+@import "styles/variable";
+
+.form {
+  @include box;
+
+  display: flex;
+  flex-direction: column;
+  color: $gray-900;
+
+  margin: auto;
+  margin-top: 2rem;
+  width: 60%;
+
+  padding: 2rem;
+
+  @include desktop("L") {
+    width: 50%;
+  }
+}
+
+.rwd {
+  @include desktop("L") {
+    display: flex;
+    flex-wrap: wrap;
+
+    > div {
+      flex: percentage(1/3);
+    }
+  }
+}
+
+.group {
+  display: flex;
+  flex-wrap: wrap;
+
+  :first-child {
+    margin-right: 0.5rem;
+  }
+
+  > * {
+    flex: 47%;
+
+    justify-content: center;
+    align-items: center;
+  }
+
+  @include desktop() {
+    :first-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.mid_group {
+  @extend .group;
+
+  flex-direction: column;
+
+  @include desktop("L") {
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
+}
+
+.rwd_group {
+  @extend .group;
+  flex-direction: row;
+}
+
+.title {
+  display: flex;
+  padding-bottom: 1rem;
+
+  h5 {
+    color: $blue;
+    border-bottom: 2px solid $blue;
+
+    padding-bottom: 0.2rem;
+    margin-right: 1rem;
+  }
+
+  a {
+    color: $gray-900;
+    font-weight: 600;
+    text-decoration: none;
+  }
+}
+
+.trigger {
+  @include box;
+
+  padding: 1rem 0;
+  font-size: medium;
+
+  display: flex;
+  justify-content: space-around;
+
+  > span {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.vertical {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  > * {
+    flex: 1;
+  }
+}
+
+.horizontal {
+  display: flex;
+}
+
+.bigger {
+  color: $b_red;
+  font-size: xx-large;
+}
+
+.search {
+  @extend .horizontal;
+  justify-content: center;
+
+  background: $red;
+}
