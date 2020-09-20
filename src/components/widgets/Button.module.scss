@@ -9,6 +9,8 @@
   width: 100%;
   font-size: large;
 
+  outline: 0;
+
   @include easeOutExpo();
 
   &:hover {

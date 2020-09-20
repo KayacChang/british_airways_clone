@@ -1,27 +1,35 @@
-import React from "react";
-import TextField from "components/widgets/TextField";
-import Button from "components/widgets/Button";
+import React, { ReactNode } from "react";
 import { BiLeftArrowAlt as BackIcon } from "react-icons/bi";
 import styles from "./Form.module.scss";
+import anime from "animejs";
 
 type FormProps = {
+  children?: ReactNode;
   onClose: () => void;
 };
-export default function Form({ onClose }: FormProps) {
+export default function Form({ onClose, children }: FormProps) {
+  function tween(ref: HTMLFormElement) {
+    if (!ref) return;
+
+    anime({
+      targets: ref,
+      opacity: [0, 1],
+      easing: "easeOutExpo",
+      duration: 3000,
+    });
+  }
+
   return (
-    <form className={styles.form} onSubmit={(e) => e.preventDefault()}>
-      <button className={styles.back} onClick={onClose}>
+    <form
+      className={styles.form}
+      onSubmit={(e) => e.preventDefault()}
+      ref={tween}
+    >
+      <button className={styles.back} onClick={onClose} type={"button"}>
         <BackIcon size={24} />
       </button>
 
-      <div className={styles.content}>
-        <span>Manage My Booking</span>
-
-        <TextField className={styles.field} label={"Booking reference"} />
-        <TextField className={styles.field} label={"Last name of passenger"} />
-
-        <Button className={styles.submit}>Find booking</Button>
-      </div>
+      <div className={styles.content}>{children}</div>
     </form>
   );
 }

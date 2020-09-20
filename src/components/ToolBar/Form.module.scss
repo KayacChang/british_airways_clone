@@ -1,9 +1,9 @@
 @import "styles/variable";
 
 .form {
+  width: 100%;
   display: flex;
 
-  background: $d_blue;
   color: $white;
 
   svg {
@@ -12,6 +12,8 @@
 }
 
 .back {
+  outline: 0;
+
   border: 0;
   background: transparent;
   padding: 0 1rem;
@@ -35,28 +37,5 @@
     flex: 1;
 
     margin: 0 0.3rem;
-  }
-}
-
-.submit {
-  background: $b_red;
-  padding: 0;
-  border: 0;
-  font-size: medium;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.field {
-  label {
-    color: $gray-600;
-    font-weight: 600;
-
-    left: 0.7rem;
-  }
-
-  input {
-    padding: 0.5rem;
   }
 }

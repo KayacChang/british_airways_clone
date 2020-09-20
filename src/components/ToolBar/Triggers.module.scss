@@ -1,6 +1,8 @@
 @import "styles/variable";
 
 .triggers {
+  width: 100%;
+
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -16,7 +18,9 @@
 }
 
 .trigger {
-  background: $white;
+  outline: 0;
+  background: transparent;
+  margin: auto;
   border: 0;
 
   font-size: medium;

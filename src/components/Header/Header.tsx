@@ -40,7 +40,7 @@ export default function Header() {
         <div className={styles.bottom}>
           <div className={styles.group}>
             {["Discover", "Book", "Manage", "Help"].map((label) => (
-              <Link label={label} />
+              <Link key={label} label={label} />
             ))}
           </div>
 

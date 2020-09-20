@@ -1,11 +1,30 @@
 @import "styles/variable";
 
 .toolbar {
-  background: $white;
+  display: flex;
+  align-items: center;
+  height: 4rem;
+}
 
-  min-height: 4.5rem;
+.submit {
+  background: $b_red;
+  padding: 0;
+  border: 0;
+  font-size: medium;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  > * {
-    padding: 1rem 0;
+.field {
+  label {
+    color: $gray-600;
+    font-weight: 600;
+
+    left: 0.7rem;
+  }
+
+  input {
+    padding: 0.5rem;
   }
 }
