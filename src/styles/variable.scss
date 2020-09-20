@@ -4,9 +4,15 @@ $b_red: #b73e3e;
 
 $HOST: "https://www.britishairways.com";
 
-@mixin desktop {
-  @media (min-width: 750px) {
-    @content;
+@mixin desktop($size: "M") {
+  @if $size == "L" {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  } @else {
+    @media (min-width: 750px) {
+      @content;
+    }
   }
 }
 
