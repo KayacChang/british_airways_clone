@@ -6,12 +6,24 @@
   transform: translateY(-50%);
 }
 
+$border: 1px;
+$padding: 1rem;
+
+.active {
+  border-left: $border * 4 solid $blue;
+
+  label {
+    transform: translateY(-120%) scale(0.6) !important;
+
+    span {
+      opacity: 0 !important;
+    }
+  }
+}
+
 .textfield {
   display: flex;
   position: relative;
-
-  $border: 1px;
-  $padding: 1rem;
 
   @include box;
   border: $border solid $gray-200;
@@ -24,6 +36,10 @@
 
     border-left: $border * 4 solid transparent;
     font-size: 1.2rem;
+
+    &::placeholder {
+      opacity: 0;
+    }
   }
 
   label {
@@ -47,6 +63,10 @@
 
   input:focus {
     border-left: $border * 4 solid $blue;
+
+    &::placeholder {
+      opacity: 1;
+    }
 
     & + label {
       transform: translateY(-120%) scale(0.6);

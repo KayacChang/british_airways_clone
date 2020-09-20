@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from "react";
+import React, { ChangeEvent, ReactNode, useState } from "react";
 import styles from "./ToolBar.module.scss";
 import Form from "./Form";
 import Triggers from "./Triggers";
@@ -7,6 +7,7 @@ import TextField from "components/widgets/TextField";
 import Button from "components/widgets/Button";
 import { MdFlight as Flight, MdAccessTime as Time } from "react-icons/md";
 import { BiCheck as Check } from "react-icons/bi";
+import { pipe, replace, trim, concat } from "ramda";
 
 function ManageMyBooking() {
   return (
@@ -35,10 +36,23 @@ function CheckIn() {
 }
 
 function CheckFlightStatus() {
+  const [code, setCode] = useState("");
+
+  function handleCode(e: ChangeEvent<HTMLInputElement>) {
+    pipe(trim, setCode)(e.target.value);
+  }
+
   return (
     <>
       <span>Check flight status</span>
 
+      <TextField
+        className={styles.field}
+        label={"BA"}
+        value={code}
+        placeholder={"0000"}
+        onChange={handleCode}
+      />
       <TextField className={styles.field} label={"Departing"} />
       <TextField className={styles.field} label={"Sun 20 Sep"} />
 
