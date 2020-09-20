@@ -1,13 +1,13 @@
 import React from "react";
 import Footer from "components/Footer";
 import Header from "components/Header";
-import Book from "components/Book";
+import Home from "pages/Home";
 
 function App() {
   return (
     <div>
       <Header />
-      <Book />
+      <Home />
       <Footer />
     </div>
   );
