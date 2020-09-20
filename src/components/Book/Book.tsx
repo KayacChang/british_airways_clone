@@ -2,8 +2,8 @@ import React from "react";
 import Search from "./Search";
 import Tabs from "./Tabs";
 import styles from "./Book.module.scss";
-import Button from "./Button";
 import useDevice from "hooks/useDevice";
+import Button from "components/widgets/Button";
 import Form from "./Form";
 
 function Content() {

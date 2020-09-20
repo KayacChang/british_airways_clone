@@ -1,0 +1,84 @@
+@import "styles/variable";
+
+.login {
+  @include box;
+
+  padding: 0 1rem;
+
+  h5 {
+    color: $d_blue;
+    font-weight: 700;
+  }
+
+  svg {
+    padding: 1rem;
+  }
+
+  > div {
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 0.8rem;
+  }
+}
+
+.info {
+  color: $b_blue;
+}
+
+.login_btn {
+  width: 50%;
+  background: $b_red;
+
+  margin-left: 1rem;
+
+  &:hover {
+    color: $white;
+    background: $red;
+  }
+}
+
+.field {
+  width: 100%;
+}
+
+.footer {
+  border-top: 1px solid $gray-200;
+
+  display: flex;
+  flex-direction: column;
+
+  > * {
+    width: 100%;
+    margin: 1rem 0;
+  }
+
+  h5 {
+    text-align: center;
+  }
+
+  ul {
+    margin: 0;
+    line-height: 1.4;
+    list-style: inside;
+  }
+}
+
+.register {
+  border-color: $blue;
+  color: $blue;
+}
+
+.expand {
+  background: transparent;
+  color: $blue;
+
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+
+  svg {
+    padding: 0;
+  }
+}

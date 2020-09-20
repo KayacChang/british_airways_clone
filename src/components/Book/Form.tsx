@@ -1,11 +1,11 @@
 import React, { ReactNode } from "react";
-import TextField from "./TextField";
 import styles from "./Form.module.scss";
 import { VscAccount as Account } from "react-icons/vsc";
 import { IoIosSearch as SearchIcon } from "react-icons/io";
 import { MdFlight as Flight } from "react-icons/md";
 import clsx from "clsx";
-import Button from "./Button";
+import TextField from "components/widgets/TextField";
+import Button from "components/widgets/Button";
 
 function Title() {
   return (

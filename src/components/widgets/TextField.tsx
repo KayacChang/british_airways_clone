@@ -1,4 +1,5 @@
 import React, { ChangeEvent } from "react";
+import clsx from "clsx";
 import styles from "./TextField.module.scss";
 
 type Props = {
@@ -7,6 +8,7 @@ type Props = {
   hint?: string;
   value?: string;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+  className?: string;
 };
 
 export default function TextField({
@@ -15,9 +17,10 @@ export default function TextField({
   hint = "",
   value = "",
   onChange = () => {},
+  className,
 }: Props) {
   return (
-    <div className={styles.textfield}>
+    <div className={clsx(styles.textfield, className)}>
       <input
         type="text"
         name={name}
