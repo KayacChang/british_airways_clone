@@ -3,5 +3,10 @@
 .page {
   background: #f1f1f1;
 
-  padding: 1rem 0.7rem;
+  padding: 1rem 0;
+
+  > * {
+    margin: 0.8rem auto;
+    max-width: 59rem;
+  }
 }
