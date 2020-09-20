@@ -11,7 +11,9 @@ export default function Home() {
       <ToolBar />
 
       <div className={styles.page}>
-        <Warn />
+        <div>
+          <Warn />
+        </div>
       </div>
     </main>
   );
