@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/british_airways_clone/static/css/main.124b8cc1.chunk.css",
+    "main.js": "/british_airways_clone/static/js/main.1adfca5b.chunk.js",
+    "main.js.map": "/british_airways_clone/static/js/main.1adfca5b.chunk.js.map",
+    "runtime-main.js": "/british_airways_clone/static/js/runtime-main.1a5b1afc.js",
+    "runtime-main.js.map": "/british_airways_clone/static/js/runtime-main.1a5b1afc.js.map",
+    "static/js/2.75e7124f.chunk.js": "/british_airways_clone/static/js/2.75e7124f.chunk.js",
+    "static/js/2.75e7124f.chunk.js.map": "/british_airways_clone/static/js/2.75e7124f.chunk.js.map",
+    "index.html": "/british_airways_clone/index.html",
+    "precache-manifest.617943174b5e73130171ad917fb83c5f.js": "/british_airways_clone/precache-manifest.617943174b5e73130171ad917fb83c5f.js",
+    "service-worker.js": "/british_airways_clone/service-worker.js",
+    "static/css/main.124b8cc1.chunk.css.map": "/british_airways_clone/static/css/main.124b8cc1.chunk.css.map",
+    "static/js/2.75e7124f.chunk.js.LICENSE.txt": "/british_airways_clone/static/js/2.75e7124f.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1a5b1afc.js",
+    "static/js/2.75e7124f.chunk.js",
+    "static/css/main.124b8cc1.chunk.css",
+    "static/js/main.1adfca5b.chunk.js"
+  ]
+}
