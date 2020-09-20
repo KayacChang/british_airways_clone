@@ -1,34 +1,16 @@
-import React, { ReactNode } from "react";
-import { MdFlight as Flight, MdAccessTime as Time } from "react-icons/md";
-import { HiOutlineCheckCircle as Check } from "react-icons/hi";
+import React, { useState } from "react";
 import styles from "./ToolBar.module.scss";
-
-type Props = {
-  children: ReactNode;
-};
-function Trigger({ children }: Props) {
-  return <button className={styles.trigger}>{children}</button>;
-}
+import Form from "./Form";
+import Triggers from "./Triggers";
 
 export default function ToolBar() {
-  const size = 28;
+  const [open, setOpen] = useState(false);
 
   return (
     <div className={styles.toolbar}>
-      <div className={styles.triggers}>
-        <Trigger>
-          <Flight size={size} />
-          <span>Manage My Booking</span>
-        </Trigger>
-        <Trigger>
-          <Check size={size} />
-          <span>Check in</span>
-        </Trigger>
-        <Trigger>
-          <Time size={size} />
-          <span>Check flight status</span>
-        </Trigger>
-      </div>
+      {!open && <Triggers onClick={() => setOpen(true)} />}
+
+      {open && <Form onClose={() => setOpen(false)} />}
     </div>
   );
 }

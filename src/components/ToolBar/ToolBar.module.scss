@@ -2,45 +2,10 @@
 
 .toolbar {
   background: $white;
-}
 
-.triggers {
-  margin: 1rem 0;
-
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  min-height: 4.5rem;
 
   > * {
-    flex: 1;
-  }
-
-  > :nth-child(2) {
-    border-left: 1px solid $gray-400;
-    border-right: 1px solid $gray-400;
-  }
-}
-
-.trigger {
-  background: $white;
-  border: 0;
-
-  font-size: medium;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  > * {
-    margin: 0.5rem 0;
-  }
-
-  @include desktop {
-    flex-direction: row;
-
-    > * {
-      margin: 0 0.2rem;
-    }
+    padding: 1rem 0;
   }
 }

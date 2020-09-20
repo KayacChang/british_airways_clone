@@ -1,0 +1,62 @@
+@import "styles/variable";
+
+.form {
+  display: flex;
+
+  background: $d_blue;
+  color: $white;
+
+  svg {
+    color: $white;
+  }
+}
+
+.back {
+  border: 0;
+  background: transparent;
+  padding: 0 1rem;
+
+  display: flex;
+  align-items: center;
+}
+
+.content {
+  width: 100%;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  span {
+    display: flex;
+    align-items: center;
+  }
+
+  > * {
+    flex: 1;
+
+    margin: 0 0.3rem;
+  }
+}
+
+.submit {
+  background: $b_red;
+  padding: 0;
+  border: 0;
+  font-size: medium;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.field {
+  label {
+    color: $gray-600;
+    font-weight: 600;
+
+    left: 0.7rem;
+  }
+
+  input {
+    padding: 0.5rem;
+  }
+}
