@@ -3,13 +3,6 @@ import styles from "./Triggers.module.scss";
 import clsx from "clsx";
 import anime from "animejs";
 
-type IconProps = {
-  view: ReactNode;
-};
-function Icon({ view }: IconProps) {
-  return <div className={styles.icon}>{view}</div>;
-}
-
 type TriggerProps = {
   children: ReactNode;
   onClick: () => void;
@@ -22,9 +15,14 @@ function Trigger({ children, onClick }: TriggerProps) {
   );
 }
 
+type Item = {
+  icon: ReactNode;
+  title: string;
+  view: ReactNode;
+};
 type TriggersProps = {
-  lists: { icon: ReactNode; text: string; view: ReactNode }[];
-  onClick: (view: ReactNode) => void;
+  lists: Item[];
+  onClick: (item: Item) => void;
 };
 export default function Triggers({ lists, onClick }: TriggersProps) {
   function tween(ref: HTMLDivElement) {
@@ -40,10 +38,10 @@ export default function Triggers({ lists, onClick }: TriggersProps) {
 
   return (
     <div className={styles.triggers} ref={tween}>
-      {lists.map(({ icon, text, view }) => (
-        <Trigger key={text} onClick={() => onClick(view)}>
-          <Icon view={icon} />
-          <span>{text}</span>
+      {lists.map(({ icon, title, view }) => (
+        <Trigger key={title} onClick={() => onClick({ icon, title, view })}>
+          {icon}
+          <span>{title}</span>
         </Trigger>
       ))}
     </div>

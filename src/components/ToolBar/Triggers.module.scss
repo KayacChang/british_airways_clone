@@ -43,23 +43,6 @@
   }
 }
 
-.icon {
-  $size: 2rem;
-  width: $size;
-  height: $size;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  color: $d_blue;
-
-  border: 2px solid $d_blue;
-  border-radius: 100%;
-
-  @include easeOutExpo;
-}
-
 .hover {
   &:hover {
     > :first-child {

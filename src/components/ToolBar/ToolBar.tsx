@@ -5,7 +5,7 @@ import Triggers from "./Triggers";
 import anime from "animejs";
 import { MdFlight as Flight, MdAccessTime as Time } from "react-icons/md";
 import { BiCheck as Check } from "react-icons/bi";
-import { allPass, pipe, times, trim, when, __ } from "ramda";
+import { allPass, pipe, times, trim, when } from "ramda";
 import Select from "components/widgets/Select";
 import TextField from "components/widgets/TextField";
 import Button from "components/widgets/Button";
@@ -14,8 +14,6 @@ import dayjs, { Dayjs } from "dayjs";
 function ManageMyBooking() {
   return (
     <>
-      <span>Manage My Booking</span>
-
       <TextField className={styles.field} label={"Booking reference"} />
       <TextField className={styles.field} label={"Last name of passenger"} />
 
@@ -27,8 +25,6 @@ function ManageMyBooking() {
 function CheckIn() {
   return (
     <>
-      <span>Check in</span>
-
       <TextField className={styles.field} label={"Booking reference"} />
       <TextField className={styles.field} label={"Last name of passenger"} />
 
@@ -79,8 +75,6 @@ function AircodeField() {
 function CheckFlightStatus() {
   return (
     <>
-      <span>Check flight status</span>
-
       <AircodeField />
       <SelectDepart />
       <SelectWeek now={dayjs()} />
@@ -90,33 +84,45 @@ function CheckFlightStatus() {
   );
 }
 
+type IconProps = {
+  view: ReactNode;
+};
+function Icon({ view }: IconProps) {
+  return <div className={styles.icon}>{view}</div>;
+}
+
+type Item = {
+  icon: ReactNode;
+  title: string;
+  view: ReactNode;
+};
 const lists = [
   {
-    icon: <Flight size={18} />,
-    text: "Manage My Booking",
+    icon: <Icon view={<Flight size={18} />} />,
+    title: "Manage My Booking",
     view: <ManageMyBooking />,
   },
   {
-    icon: <Check size={18} />,
-    text: "Check in",
+    icon: <Icon view={<Check size={18} />} />,
+    title: "Check in",
     view: <CheckIn />,
   },
   {
-    icon: <Time size={28} />,
-    text: "Check flight status",
+    icon: <Icon view={<Time size={28} />} />,
+    title: "Check flight status",
     view: <CheckFlightStatus />,
   },
 ];
 
 export default function ToolBar() {
-  const [view, setView] = useState<ReactNode>();
+  const [item, setItem] = useState<Item>();
 
   function tween(ref: HTMLDivElement) {
     if (!ref) return;
 
     anime({
       targets: ref,
-      backgroundColor: view ? "#192e4d" : "#ffffff",
+      backgroundColor: item ? "#192e4d" : "#ffffff",
       easing: "easeOutExpo",
       duration: 3000,
     });
@@ -124,9 +130,9 @@ export default function ToolBar() {
 
   return (
     <div className={styles.toolbar} ref={tween}>
-      {!view && <Triggers lists={lists} onClick={setView} />}
+      {!item && <Triggers lists={lists} onClick={setItem} />}
 
-      {view && <Form onClose={() => setView(undefined)}>{view}</Form>}
+      {item && <Form item={item} onClose={() => setItem(undefined)} />}
     </div>
   );
 }
