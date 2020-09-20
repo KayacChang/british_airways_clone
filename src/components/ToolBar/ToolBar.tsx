@@ -1,13 +1,15 @@
-import React, { ChangeEvent, ReactNode, useState } from "react";
+import React, { ReactNode, useState } from "react";
 import styles from "./ToolBar.module.scss";
 import Form from "./Form";
 import Triggers from "./Triggers";
 import anime from "animejs";
-import TextField from "components/widgets/TextField";
-import Button from "components/widgets/Button";
 import { MdFlight as Flight, MdAccessTime as Time } from "react-icons/md";
 import { BiCheck as Check } from "react-icons/bi";
-import { pipe, replace, trim, concat } from "ramda";
+import { allPass, pipe, times, trim, when, __ } from "ramda";
+import Select from "components/widgets/Select";
+import TextField from "components/widgets/TextField";
+import Button from "components/widgets/Button";
+import dayjs, { Dayjs } from "dayjs";
 
 function ManageMyBooking() {
   return (
@@ -35,26 +37,53 @@ function CheckIn() {
   );
 }
 
-function CheckFlightStatus() {
+function SelectDepart() {
+  const options = ["Departing", "Arriving"];
+  const [value, setValue] = useState(options[0]);
+
+  return <Select value={value} onSelect={setValue} options={options} />;
+}
+
+type SelectWeekProps = {
+  now: Dayjs;
+};
+function SelectWeek({ now }: SelectWeekProps) {
+  const options = [
+    now.clone().subtract(1, "day"),
+    ...times(() => now.clone(), 11).map((now, idx) => now.add(idx, "day")),
+  ].map((now) => now.format("ddd DD MMM"));
+
+  const [value, setValue] = useState(options[0]);
+
+  return <Select value={value} onSelect={setValue} options={options} />;
+}
+
+const lessThan4 = (str: string) => str.length <= 4;
+const isNumber = (str: string) => !isNaN(+str);
+const cond = allPass([lessThan4, isNumber]);
+
+function AircodeField() {
   const [code, setCode] = useState("");
 
-  function handleCode(e: ChangeEvent<HTMLInputElement>) {
-    pipe(trim, setCode)(e.target.value);
-  }
+  return (
+    <TextField
+      className={styles.field}
+      label={"BA"}
+      value={code}
+      placeholder={"0000"}
+      onChange={(e) => pipe(trim, when(cond, setCode))(e.target.value)}
+    />
+  );
+}
 
+function CheckFlightStatus() {
   return (
     <>
       <span>Check flight status</span>
 
-      <TextField
-        className={styles.field}
-        label={"BA"}
-        value={code}
-        placeholder={"0000"}
-        onChange={handleCode}
-      />
-      <TextField className={styles.field} label={"Departing"} />
-      <TextField className={styles.field} label={"Sun 20 Sep"} />
+      <AircodeField />
+      <SelectDepart />
+      <SelectWeek now={dayjs()} />
 
       <Button className={styles.submit}>Find flight</Button>
     </>
@@ -80,7 +109,7 @@ const lists = [
 ];
 
 export default function ToolBar() {
-  const [view, setView] = useState<ReactNode>(undefined);
+  const [view, setView] = useState<ReactNode>();
 
   function tween(ref: HTMLDivElement) {
     if (!ref) return;

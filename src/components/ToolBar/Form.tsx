@@ -25,7 +25,7 @@ export default function Form({ onClose, children }: FormProps) {
       onSubmit={(e) => e.preventDefault()}
       ref={tween}
     >
-      <button className={styles.back} onClick={onClose} type={"button"}>
+      <button className={styles.back} onClick={onClose} type="button">
         <BackIcon size={24} />
       </button>
 
