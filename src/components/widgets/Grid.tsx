@@ -24,7 +24,7 @@ export default function Grid({ list }: Props) {
   return (
     <div className={styles.group}>
       {list.map(({ title, img }) => (
-        <Item title={title} img={img} />
+        <Item key={title} title={title} img={img} />
       ))}
     </div>
   );

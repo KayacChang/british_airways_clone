@@ -58,17 +58,19 @@ export default function Home() {
                   "/assets/images/MediaHub/Media-Database/Royalty-free-RF/Destinations/Grenadines/185264892_600x337.jpg",
                 items: [
                   {
-                    mainTitle: "Sale: Up to £100 extra off Caribbean",
+                    title: "Sale: Up to £100 extra off Caribbean",
                     content:
                       "Book your holiday by 22 September and get an extra discount.",
                   },
                   {
-                    subTitle: "Barbados flights + 7 nights hotel",
+                    title: "Barbados flights + 7 nights hotel",
+                    sub: true,
                     money: "£537",
                     hint: "from London, Nov 2020",
                   },
                   {
-                    subTitle: "St Lucia flights + 7 nights hotel",
+                    title: "St Lucia flights + 7 nights hotel",
+                    sub: true,
                     money: "£577",
                     hint: "from London, Nov 2020",
                   },
@@ -88,17 +90,19 @@ export default function Home() {
                   "/assets/images/MediaHub/Media-Database/Royalty-free-RF/Destinations/Italy/Rome-ROM/20997510_600x337.jpg",
                 items: [
                   {
-                    mainTitle: "Explore Italy's beaches and cities",
+                    title: "Explore Italy's beaches and cities",
                     content:
                       "Book now and change later if you need to. All flights and holidays include flexible booking.",
                   },
                   {
-                    subTitle: "2 night city breaks",
+                    title: "2 night city breaks",
+                    sub: true,
                     money: "£99",
                     hint: "from London, Nov 2020",
                   },
                   {
-                    subTitle: "7 night beach holidays",
+                    title: "7 night beach holidays",
+                    sub: true,
                     money: "£179",
                     hint: "from London, Oct 2020",
                   },
@@ -147,17 +151,19 @@ export default function Home() {
                   "/assets/images/MediaHub/Media-Database/Royalty-free-RF/Destinations/Italy/Venice-VCE/713599501_600x337.jpg",
                 items: [
                   {
-                    mainTitle: "Sale: Business class from £149 return",
+                    title: "Sale: Business class from £149 return",
                     content:
                       "Explore our premium sale to European destinations.",
                   },
                   {
-                    subTitle: "Flights to Venice",
+                    title: "Flights to Venice",
+                    sub: true,
                     money: "£144",
                     hint: "from London, Nov 2020",
                   },
                   {
-                    subTitle: "Flights to Gothenburg",
+                    title: "Flights to Gothenburg",
+                    sub: true,
                     money: "£141",
                     hint: "from London, Nov 2020",
                   },
@@ -176,7 +182,7 @@ export default function Home() {
                   "/assets/images/MediaHub/Media-Database/Royalty-free-RF/People/Using-Technology/53607330_600x337.jpg",
                 items: [
                   {
-                    mainTitle: "Claiming and using your voucher",
+                    title: "Claiming and using your voucher",
                     content: "What you need to know about your travel voucher.",
                   },
                   {
@@ -194,7 +200,7 @@ export default function Home() {
                   "/assets/images/MediaHub/Media-Database/Royalty-free-RF/People/Using-Technology/34326650_600x337.jpg",
                 items: [
                   {
-                    mainTitle: "If you need to contact us",
+                    title: "If you need to contact us",
                     content:
                       "We’re experiencing extremely high call volumes and are responding as quickly as we can so please bear with us.",
                   },

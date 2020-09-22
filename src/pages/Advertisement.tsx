@@ -3,18 +3,18 @@ import Card from "components/widgets/Card";
 import React from "react";
 
 type Item = {
-  mainTitle?: string;
-  subTitle?: string;
+  title?: string;
+  sub?: boolean;
   content?: string;
   money?: string;
   hint?: string;
   button?: string;
 };
-function Group({ mainTitle, subTitle, content, money, hint, button }: Item) {
+function Group({ title, sub, content, money, hint, button }: Item) {
   return (
     <div>
-      {mainTitle && <h2>{mainTitle}</h2>}
-      {subTitle && <h5>{subTitle}</h5>}
+      {title && !sub && <h2>{title}</h2>}
+      {title && sub && <h5>{title}</h5>}
 
       {content && <p>{content}</p>}
 
@@ -46,19 +46,17 @@ export default function Advertisement({ data }: Props) {
       header={<img src={img} alt={img} />}
       body={
         <>
-          {items.map(
-            ({ mainTitle, subTitle, content, money, hint, button }) => (
-              <Group
-                key={mainTitle || subTitle}
-                mainTitle={mainTitle}
-                subTitle={subTitle}
-                content={content}
-                money={money}
-                hint={hint}
-                button={button}
-              />
-            )
-          )}
+          {items.map(({ title, sub, content, money, hint, button }, idx) => (
+            <Group
+              key={String(idx)}
+              title={title}
+              sub={sub}
+              content={content}
+              money={money}
+              hint={hint}
+              button={button}
+            />
+          ))}
         </>
       }
       footer={hint && <span>{hint}</span>}

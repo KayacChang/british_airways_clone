@@ -1,4 +1,3 @@
-import Button from "./Button";
 import React, { ReactNode } from "react";
 import styles from "./Card.module.scss";
 
