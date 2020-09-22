@@ -10,3 +10,9 @@
     margin: auto;
   }
 }
+
+.ad_group {
+  > * {
+    margin: 1rem 0;
+  }
+}
