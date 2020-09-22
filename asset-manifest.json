@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/british_airways_clone/static/css/main.124b8cc1.chunk.css",
-    "main.js": "/british_airways_clone/static/js/main.1adfca5b.chunk.js",
-    "main.js.map": "/british_airways_clone/static/js/main.1adfca5b.chunk.js.map",
+    "main.css": "/british_airways_clone/static/css/main.1039aa58.chunk.css",
+    "main.js": "/british_airways_clone/static/js/main.f3b9f28f.chunk.js",
+    "main.js.map": "/british_airways_clone/static/js/main.f3b9f28f.chunk.js.map",
     "runtime-main.js": "/british_airways_clone/static/js/runtime-main.1a5b1afc.js",
     "runtime-main.js.map": "/british_airways_clone/static/js/runtime-main.1a5b1afc.js.map",
-    "static/js/2.75e7124f.chunk.js": "/british_airways_clone/static/js/2.75e7124f.chunk.js",
-    "static/js/2.75e7124f.chunk.js.map": "/british_airways_clone/static/js/2.75e7124f.chunk.js.map",
+    "static/js/2.d5d9a9b5.chunk.js": "/british_airways_clone/static/js/2.d5d9a9b5.chunk.js",
+    "static/js/2.d5d9a9b5.chunk.js.map": "/british_airways_clone/static/js/2.d5d9a9b5.chunk.js.map",
     "index.html": "/british_airways_clone/index.html",
-    "precache-manifest.617943174b5e73130171ad917fb83c5f.js": "/british_airways_clone/precache-manifest.617943174b5e73130171ad917fb83c5f.js",
+    "precache-manifest.5b37bdbad023a1ff779cf2f64a5e87b9.js": "/british_airways_clone/precache-manifest.5b37bdbad023a1ff779cf2f64a5e87b9.js",
     "service-worker.js": "/british_airways_clone/service-worker.js",
-    "static/css/main.124b8cc1.chunk.css.map": "/british_airways_clone/static/css/main.124b8cc1.chunk.css.map",
-    "static/js/2.75e7124f.chunk.js.LICENSE.txt": "/british_airways_clone/static/js/2.75e7124f.chunk.js.LICENSE.txt"
+    "static/css/main.1039aa58.chunk.css.map": "/british_airways_clone/static/css/main.1039aa58.chunk.css.map",
+    "static/js/2.d5d9a9b5.chunk.js.LICENSE.txt": "/british_airways_clone/static/js/2.d5d9a9b5.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.1a5b1afc.js",
-    "static/js/2.75e7124f.chunk.js",
-    "static/css/main.124b8cc1.chunk.css",
-    "static/js/main.1adfca5b.chunk.js"
+    "static/js/2.d5d9a9b5.chunk.js",
+    "static/css/main.1039aa58.chunk.css",
+    "static/js/main.f3b9f28f.chunk.js"
   ]
 }
