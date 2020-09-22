@@ -32,11 +32,15 @@ function Group({ mainTitle, subTitle, content, money, hint, button }: Item) {
 }
 
 type Props = {
-  img: string;
-  items: Item[];
-  hint?: string;
+  data: {
+    img: string;
+    items: Item[];
+    hint?: string;
+  };
 };
-export default function Advertisement({ img, items, hint }: Props) {
+export default function Advertisement({ data }: Props) {
+  const { img, items, hint } = data;
+
   return (
     <Card
       header={<img src={img} alt={img} />}
