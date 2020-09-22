@@ -1,0 +1,73 @@
+@import "styles/variable";
+
+.card {
+  overflow: hidden;
+  border-radius: 4px;
+  background: $white;
+  color: $gray-700;
+}
+
+.header {
+  height: 12rem;
+
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.body {
+  padding-top: 1rem;
+  text-align: center;
+
+  > div {
+    margin: 1rem;
+  }
+
+  h2 {
+    font-size: x-large;
+    color: $d_blue;
+    margin-bottom: 1rem;
+  }
+
+  h5 {
+    margin: 1rem 0;
+    font-weight: 500;
+    font-size: medium;
+    color: $d_blue;
+  }
+
+  p {
+    font-weight: 500;
+    color: $gray-800;
+
+    span {
+      display: inline-block;
+      font-weight: 600;
+      font-size: x-large;
+      padding-bottom: 0.3rem;
+      border-bottom: 1px solid $gray-800;
+    }
+  }
+
+  span {
+    font-weight: 600;
+    font-size: x-small;
+  }
+
+  button {
+    color: $b_blue;
+    border-color: $b_blue;
+  }
+}
+
+.footer {
+  margin: 1.2rem 0;
+  text-align: center;
+
+  span {
+    font-weight: 600;
+    font-size: 0.7rem;
+  }
+}
