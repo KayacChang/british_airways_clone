@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/british_airways_clone/precache-manifest.5b37bdbad023a1ff779cf2f64a5e87b9.js"
+  "/british_airways_clone/precache-manifest.7e896781e17627e995d8d99a035a0eb1.js"
 );
 
 self.addEventListener('message', (event) => {
